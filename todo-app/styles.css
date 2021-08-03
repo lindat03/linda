@@ -1,3 +1,58 @@
 body {
-  background: pink;
+  max-width: 300px;
+  margin: auto;
+  padding: 2em;
+  font-size: 24px;
+  font-family: Baskerville, Georgia, serif;
+  line-height: 1.6em;
+}
+
+#header {
+  color: rebeccapurple;
+  text-align: center;
+  width: 200px;
+  margin: auto;
+}
+
+.todo-form {
+  align-items: center;
+  width: 200px;
+  margin: auto;
+}
+
+.todo-list {
+}
+
+/* gets rid of icon clickability */
+.fa,
+.fas {
+  pointer-events: none;
+}
+
+/* strikethrough animation */
+.strikethrough {
+  display: inline-block;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.strikethrough:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  box-shadow: 0 1px rgba(255, 255, 255, 0.6);
+  margin-top: -0.7em;
+  background: black;
+  transform-origin: center left;
+  animation: strikethrough 1s 0.5s cubic-bezier(0.55, 0, 0.1, 1) 1;
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+}
+@keyframes strikethrough {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
