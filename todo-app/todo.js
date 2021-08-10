@@ -2,10 +2,14 @@ const todoInput = document.querySelector('.todo-input');
 const myForm = document.querySelector('.todo-form');
 const list = document.querySelector('.todo-list');
 const errorMessage = document.querySelector('.error-msg');
+const deleteCompletedTaskButton = document.querySelector(
+  '.delete-completed-btn'
+);
 
 //event listeners
 myForm.addEventListener('submit', onSubmit);
 list.addEventListener('click', todoAction);
+deleteCompletedTaskButton.addEventListener('click', deleteCompletedTasks);
 
 function onSubmit(e) {
   e.preventDefault();
@@ -85,6 +89,8 @@ function todoAction(e) {
 
 function editExistingTask(task) {
   task.childNodes[0].disabled = true;
+  task.childNodes[0].classList.add('complete-btn-edit');
+  task.childNodes[0].classList.remove('complete-btn');
   const previousValue = task.childNodes[1].innerText;
   task.removeChild(task.childNodes[1]);
 
@@ -129,6 +135,8 @@ function editCompleteSubmit(e) {
     const editButton = createEditButton();
     task.appendChild(editButton);
     task.childNodes[0].disabled = false;
+    task.childNodes[0].classList.remove('complete-btn-edit');
+    task.childNodes[0].classList.add('complete-btn');
   }
 }
 
@@ -136,14 +144,24 @@ function showErrorMessage() {
   if (errorMessage.childNodes[0] === undefined) {
     const errorText = document.createElement('div');
     errorText.classList.add('error-msg-text');
-    errorText.innerHTML = 'please enter a task!';
+    errorText.innerHTML = 'Please enter a task!';
     errorMessage.appendChild(errorText);
     setTimeout(() => errorMessage.removeChild(errorText), 3000);
   }
 }
 
-function removeAllChildNodes(parent) {
-  while (parent.firstChild) {
-    parent.removeChild(parent.firstChild);
+function deleteCompletedTasks(e) {
+  const todoContainer =
+    e.target.parentElement.parentElement.childNodes[7].childNodes[1];
+  let completedTasks = [];
+  for (let i = 0; i < todoContainer.children.length; i++) {
+    const text = todoContainer.childNodes[i].childNodes[1];
+    if (text.classList[1] === 'gray-out') {
+      completedTasks.push(text.parentElement);
+    }
   }
+  console.log(completedTasks);
+  completedTasks.forEach(function (node) {
+    node.remove();
+  });
 }
