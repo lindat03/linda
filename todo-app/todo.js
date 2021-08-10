@@ -88,18 +88,20 @@ function todoAction(e) {
 }
 
 function editExistingTask(task) {
+  //disables the checkbox and makes it disappear
   task.childNodes[0].disabled = true;
   task.childNodes[0].classList.add('complete-btn-edit');
   task.childNodes[0].classList.remove('complete-btn');
+  //grabs the value of the text span
   const previousValue = task.childNodes[1].innerText;
   task.removeChild(task.childNodes[1]);
-
+  //replaces span with input
   const editText = document.createElement('input');
   editText.type = 'text';
   editText.classList.add('edit-text');
   editText.value = previousValue;
   task.insertBefore(editText, task.children[1]);
-
+  //creates edit complete btn
   const editComplete = document.createElement('button');
   editComplete.type = 'submit';
   editComplete.classList.add('edit-complete-btn');
