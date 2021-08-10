@@ -1,3 +1,23 @@
 body {
-  background: pink;
+  background: white;
+}
+/* header {
+  width: 110%;
+  height: 50px;
+  background-color: #eaa978;
+  margin: -0.5rem;
+} */
+#title {
+  text-align: center;
+  padding-top: 5px;
+}
+
+.site-content {
+  max-width: 80%;
+  margin: auto;
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: 40% 60%;
 }
