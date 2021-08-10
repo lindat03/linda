@@ -2,12 +2,10 @@ body {
   max-width: 30rem;
   margin: auto;
   margin-top: 2rem;
-  padding: 0rem;
   line-height: 1.6em;
   background-color: rgb(245, 233, 208);
   font-family: 'Zilla Slab', serif;
   font-size: 20px;
-  position: relative;
 }
 
 .todo-form,
@@ -23,7 +21,7 @@ body {
 /* the input of the todo list*/
 .todo-form {
   display: grid;
-  grid-template-columns: auto 2rem;
+  grid-template-columns: auto 10%;
 }
 
 /* the actual list */
@@ -34,11 +32,21 @@ body {
 /* the contents of the task */
 .todo {
   display: grid;
-  /* grid-template-columns: 2.5rem 20.5rem 3.5rem 3.5rem; */
-  grid-template-columns: auto 60% auto auto;
   background-color: white;
   margin-top: 1rem;
   border-radius: 1rem;
+}
+
+@media screen {
+  .todo {
+    grid-template-columns: 10% auto 12% 12%;
+  }
+}
+
+@media handheld {
+  .todo {
+    grid-template-columns: 10% auto 15% 15%;
+  }
 }
 
 /* the text of the task */
@@ -46,6 +54,7 @@ body {
   position: relative;
   padding: 1rem;
   overflow-wrap: break-word;
+  text-align: left;
 }
 
 /* complete button */
@@ -102,18 +111,20 @@ input:focus {
 }
 
 .edit-text {
-  height: 3.5rem;
+  height: 4rem;
+  padding: 1rem 0;
+  color: #6f8612;
   position: relative;
   padding: 1rem;
   overflow-wrap: break-word;
-  margin: 0.25rem 0;
-  color: #6f8612;
+  text-align: left;
 }
 
 button {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  padding: 0;
 }
 
 /*error message*/
