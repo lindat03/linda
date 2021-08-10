@@ -42,7 +42,6 @@ body {
     grid-template-columns: 10% 66% 12% 12%;
   }
 }
-
 @media handheld {
   .todo {
     grid-template-columns: 10% 60% 15% 15%;
@@ -81,12 +80,13 @@ body {
 }
 
 .complete-btn-edit {
+  -webkit-appearance: none;
   appearance: none;
 }
 
-.delete-btn-checked {
+/* .delete-btn-checked {
   padding-left: 100%;
-}
+} */
 
 img {
   width: 2rem;
@@ -134,7 +134,9 @@ button {
 .error-msg-text {
   position: absolute;
   width: 12rem;
-  left: 11rem;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%, 0%);
   top: -2rem;
   font-family: 'Varela Round', sans-serif;
   font-size: 15px;

@@ -67,15 +67,21 @@ function createNewToDo(direction) {
 function todoAction(e) {
   const item = e.target;
   const task = item.parentElement;
+
   if (item.classList[0] === 'delete-img') {
+    //delete task function
     task.parentElement.remove();
   } else if (item.classList[0] === 'complete-btn') {
+    //complete task function
     if (task.childNodes[1].nodeName === 'SPAN') {
+      //checks to see if the task is not in edit mode
       if (item.checked == true) {
+        //completes the task; checks the box
         task.childNodes[1].classList.add('gray-out');
         task.childNodes[2].classList.add('delete-btn-checked');
         task.childNodes[3].remove();
       } else {
+        //unchecks the box; brings the task back
         task.childNodes[1].classList.remove('gray-out');
         task.childNodes[2].classList.remove('delete-btn-checked');
         const editButton = createEditButton();
@@ -86,7 +92,9 @@ function todoAction(e) {
     editExistingTask(task);
   }
 }
-
+/*
+  
+*/
 function editExistingTask(task) {
   //disables the checkbox and makes it disappear
   task.childNodes[0].disabled = true;
@@ -101,16 +109,16 @@ function editExistingTask(task) {
   editText.classList.add('edit-text');
   editText.value = previousValue;
   task.insertBefore(editText, task.children[1]);
-  //creates edit complete btn
+  //creates edit complete btn and replaces the edit button with it
   const editComplete = document.createElement('button');
   editComplete.type = 'submit';
   editComplete.classList.add('edit-complete-btn');
   editComplete.innerHTML = '<img src="icons/tick-mark.png" alt="" />';
   task.removeChild(task.childNodes[3]);
   task.appendChild(editComplete);
-
+  //makes the cursor focus on the input box
   editText.focus();
-
+  //listens for when the user presses submit/clicks the edit complete button
   editComplete.addEventListener('click', editCompleteSubmit);
   editText.addEventListener('keyup', function (e) {
     if (e.key === 'Enter') {
