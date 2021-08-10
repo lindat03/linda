@@ -35,7 +35,7 @@ body {
 .todo {
   display: grid;
   /* grid-template-columns: 2.5rem 20.5rem 3.5rem 3.5rem; */
-  grid-template-columns: 12% 64% 12% 12%;
+  grid-template-columns: auto 60% auto auto;
   background-color: white;
   margin-top: 1rem;
   border-radius: 1rem;
