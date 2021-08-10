@@ -210,5 +210,6 @@ footer {
   bottom: 1rem;
   left: 50%;
   transform: translate(-50%, 0);
-  color: #636a5a;
+  /* color: #636a5a; */
+  color: red;
 }
