@@ -2,7 +2,7 @@ body {
   max-width: 30rem;
   margin: auto;
   margin-top: 2rem;
-  padding: 1rem;
+  padding: 0rem;
   line-height: 1.6em;
   background-color: rgb(245, 233, 208);
   font-family: 'Zilla Slab', serif;
@@ -199,5 +199,5 @@ footer {
   bottom: 1rem;
   left: 50%;
   transform: translate(-50%, 0);
-  color: red;
+  color: #636a5a;
 }
