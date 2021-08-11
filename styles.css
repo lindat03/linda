@@ -1,15 +1,15 @@
 body {
-  background: white;
+  background: #f3d8b4;
+  font-family: 'Karla', sans-serif;
 }
-/* header {
-  width: 110%;
-  height: 50px;
-  background-color: #eaa978;
-  margin: -0.5rem;
-} */
+
 #title {
   text-align: center;
   padding-top: 5px;
+  font-size: 20px;
+  font-family: 'Karla', serif;
+  padding-bottom: 4rem;
+  color: #b85c38;
 }
 
 .site-content {
@@ -17,7 +17,97 @@ body {
   margin: auto;
 }
 
-.project-container {
-  display: grid;
-  grid-template-columns: 40% 60%;
+#introduction {
+  font-family: 'Rubik', serif;
+  font-size: 50px;
+  color: #5c3d2e;
+  margin: 0;
+}
+
+#introduction-description {
+  width: 95%;
+  font-size: 20px;
+  line-height: 2rem;
+  color: #2d2424;
+  margin: 0.5rem 0 4rem auto;
+  text-align: right;
+}
+
+hr {
+  height: 1px;
+  background-color: #5c3d2e;
+  border: none;
+}
+
+#projects-title {
+  width: 70%;
+  margin: 0 auto 2rem auto;
+  padding-top: 2rem;
+  text-align: center;
+  font: 50px 'Rubik', serif;
+  color: #b85c38;
+}
+@media screen {
+  .project-container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+  }
+}
+
+.project-img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 1rem;
+  border: #5c3d2e solid 3px;
+}
+
+.project-description-container {
+  padding-left: 2rem;
+}
+
+.project-title {
+  font-family: 'Rubik', serif;
+  font-size: 40px;
+  margin: 0;
+  color: #5c3d2e;
+}
+
+.languages-used {
+  margin: 0 auto 1.5rem 3rem;
+  font-size: 15px;
+  color: #5c3d2e;
+  font-style: italic;
+}
+
+.project-description {
+  font-size: 20px;
+}
+
+.created-time {
+  color: #5c3d2e;
+  font-style: italic;
+}
+
+a.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+
+  font: 25px 'Rubik', serif;
+  color: #f3d8b4;
+  text-decoration: none;
+  text-align: center;
+  line-height: 200%;
+
+  height: 3rem;
+  width: 9rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: #b85c38;
+  margin: 0.5rem auto auto 1.5rem;
+}
+
+a.button:hover {
+  background-color: #d08264;
+  transition: 0.5s;
 }
