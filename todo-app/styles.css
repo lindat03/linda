@@ -37,17 +37,6 @@ body {
   border-radius: 1rem;
 }
 
-@media screen {
-  .todo {
-    grid-template-columns: 10% 66% 12% 12%;
-  }
-}
-@media handheld {
-  .todo {
-    grid-template-columns: 10% 60% 15% 15%;
-  }
-}
-
 /* the text of the task */
 .todo-item {
   position: relative;
@@ -84,10 +73,6 @@ body {
   appearance: none;
 }
 
-/* .delete-btn-checked {
-  padding-left: 100%;
-} */
-
 img {
   width: 2rem;
   pointer-events: none;
@@ -110,6 +95,7 @@ input:focus {
   outline: none;
 }
 
+/* EDIT TASK INPUT */
 .edit-text {
   height: 4rem;
   padding: 1rem 0;
@@ -120,6 +106,7 @@ input:focus {
   text-align: left;
 }
 
+/* BUTTONS */
 button {
   border: none;
   background-color: transparent;
@@ -150,6 +137,7 @@ button {
   opacity: 30%;
 }
 
+/* delete completed tasks button */
 .delete-completed {
   position: absolute;
   bottom: 3.5rem;
@@ -159,6 +147,7 @@ button {
   transform: translate(-50%, 0);
   align-items: center;
 }
+
 .delete-completed-btn {
   width: 12rem;
   color: white;
@@ -186,24 +175,6 @@ button {
   margin-bottom: 2rem;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.3;
-  }
-}
-
 footer {
   width: 200px;
   text-align: center;
@@ -214,4 +185,26 @@ footer {
   transform: translate(-50%, 0);
   color: #636a5a;
   /* color: red; */
+}
+
+@media screen {
+  .todo {
+    grid-template-columns: 10% 66% 12% 12%;
+  }
+  .delete-btn-checked {
+    padding-left: 100%;
+  }
+}
+@media handheld {
+  .todo {
+    grid-template-columns: 10% 50% 20% 20%;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
