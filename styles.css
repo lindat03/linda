@@ -50,6 +50,7 @@ hr {
 @media screen {
   .project-container {
     display: grid;
+    grid-row-gap: 3rem;
     grid-template-columns: 40% 60%;
   }
 }
