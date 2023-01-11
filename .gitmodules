@@ -1,0 +1,3 @@
+[submodule "pomodoro"]
+	path = pomodoro
+	url = https://github.com/lindat03/pomodoro
