@@ -1,5 +1,5 @@
 body {
-  background: #f3d8b4;
+  background: #f4ebe8;
   font-family: 'Karla', sans-serif;
 }
 
@@ -19,9 +19,10 @@ body {
 
 #introduction {
   font-family: 'Rubik', serif;
-  font-size: 50px;
+  font-size: 3vw;
   color: #5c3d2e;
   margin: 0;
+  text-align: right;
 }
 
 #introduction-description {
@@ -29,7 +30,29 @@ body {
   font-size: 20px;
   line-height: 2rem;
   color: #2d2424;
-  margin: 0.5rem 0 4rem auto;
+  margin: 0.5rem 0 1rem auto;
+  text-align: right;
+}
+
+.links{
+  color:#2d2424;
+  margin-left: 15px;
+}
+
+#profile-img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 1rem;
+  border: #5c3d2e solid 3px;
+  margin: 50px;
+}
+
+.introduction-text-div{
+  padding-top: 6vw;
+}
+
+.introduction-links-div{
+  font-size: 20px;
   text-align: right;
 }
 
@@ -45,7 +68,7 @@ hr {
   padding-top: 2rem;
   text-align: center;
   font: 50px 'Rubik', serif;
-  color: #b85c38;
+  color: #342305;
 }
 @media screen {
   .project-container {
@@ -53,7 +76,14 @@ hr {
     grid-row-gap: 3rem;
     grid-template-columns: 40% 60%;
   }
+  .introduction-div{
+    display: grid;
+    grid-row-gap: 3rem;
+    grid-template-columns: 40% 60%;
+    margin-top: 3vw;
+  }
 }
+
 
 .project-img {
   max-width: 100%;
@@ -95,7 +125,7 @@ a.button {
   appearance: button;
 
   font: 25px 'Rubik', serif;
-  color: #f3d8b4;
+  color: #f4ebe8;
   text-decoration: none;
   text-align: center;
   line-height: 200%;
@@ -104,11 +134,11 @@ a.button {
   width: 9rem;
   border: none;
   border-radius: 1rem;
-  background-color: #b85c38;
+  background-color: #342305;
   margin: 0.5rem auto auto 1.5rem;
 }
 
 a.button:hover {
-  background-color: #d08264;
+  background-color: #504634;
   transition: 0.5s;
 }
